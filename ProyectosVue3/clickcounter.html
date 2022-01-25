@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS 3</title>
+    <style>
+        .boton{
+            padding: 4px;
+            border-radius: 5px;
+            background-color: bisque;
+            width: 2rem;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="" id="app">
+        <h1>Primer Componente</h1>
+        <click-counter></click-counter>
+        <click-counter></click-counter>
+        <click-counter></click-counter>
+        <click-counter></click-counter>
+    </div>
+
+    <script type="text/x-template" id="click-counter-template">
+        <h2>El conteo es</h2>
+        <button class="boton" @click="count++">{{count}}</button>
+    </script>
+    <!--URL DE VUE 3-->
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <!--Estancia De Vue-->
+    <script>
+        Vue.createApp({
+            data(){
+                return{}
+            }
+        })
+        .component('click-counter',{
+            template:'#click-counter-template',
+            data(){
+                return{
+                    count:0
+                }
+            }
+        })
+        .mount('#app')
+
+    </script>
+</body>
+</html>
